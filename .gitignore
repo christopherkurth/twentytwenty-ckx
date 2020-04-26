@@ -1,0 +1,14 @@
+
+.DS_Store
+sass/content/accents.sass
+sass/content/block-mods.sass
+sass/content/form.sass
+sass/content/links.sass
+sass/footer/footer.sass
+sass/global/fonts.sass
+sass/global/global.scss
+sass/header/menu.sass
+sass/spezial-page-settings/cookie-notice.sass
+sass/spezial-page-settings/frontpage.sass
+sass/style.sass
+classes/class-twentytwenty-customize.php
