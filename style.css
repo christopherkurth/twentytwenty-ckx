@@ -4,7 +4,7 @@
 * Author: <a href="https://christopherkurth.com">Christopher Kurth</a>
 * Requires at least: WordPress 5.3
 * Template: twentytwenty
-* Version: 3.1.10
+* Version: 3.1.11
 * License: GNU General Public License v2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -504,7 +504,10 @@ a.comment-reply-link:hover {
       grid-column: 1;
       -ms-grid-row: 2;
       grid-row: 2;
-    }
+	}
+	.wp-block-media-text .wp-block-media-text__content {
+		padding: 3rem 0rem;
+	}
 }
 
 
