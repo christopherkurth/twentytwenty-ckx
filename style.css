@@ -4,7 +4,7 @@
 * Author: <a href="https://christopherkurth.com">Christopher Kurth</a>
 * Requires at least: WordPress 5.3
 * Template: twentytwenty
-* Version: 3.1.9
+* Version: 3.1.12
 * License: GNU General Public License v2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -101,8 +101,8 @@ html .entry-title {
 	}
 }
 
+body:not(.home).page .entry-title,
 .single h1.entry-title,
-body.page:not(.home) h1.entry-title,
 h2.entry-title,
 .comment-reply-title {
 	font-size: 4.2rem;
@@ -118,7 +118,15 @@ body .widget .heading-size-3 {
 ******************************************** */
 
 #site-header .header-inner {
-	box-shadow: 0 1px 0 rgba(46, 46, 46, 0.08);
+	box-shadow: 0 1px 0 rgba(46, 46, 46, .08);
+}
+body.template-cover #site-header .header-inner {
+	box-shadow: 0 1px 0 rgba(242, 242, 242, .08);
+}
+body #site-content .cover-header.bg-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 body .site-title a {
 	color: #2e2e2e;
@@ -131,6 +139,11 @@ body.overlay-header .site-title a {
 }
 body.overlay-header .header-inner {
 	box-shadow: 0 1px 0 rgba(248, 248, 248, 0.08);
+}
+@media (min-width: 700px) {
+	.header-titles .site-logo img {
+		max-height: 7rem;
+	}
 }
 @media (prefers-color-scheme: dark) {
 	#site-header .header-inner {
@@ -160,8 +173,9 @@ html .navigation.pagination a,
 .header-footer-group .color-accent-hover:hover {
 	color: rgba(46, 46, 46, .6) !important;
 }
-body:not(.overlay-header) .primary-menu ul {
+body .primary-menu ul {
 	background: #e8e8e8 !important;
+	color: #2e2e2e;
 }
 html body:not(.overlay-header) .primary-menu > li > ul:after,
 html .primary-menu ul::after {
@@ -190,8 +204,9 @@ body:not(.overlay-header) .primary-menu ul li a {
 	.header-footer-group .color-accent-hover:hover {
 		color: rgba(248, 248, 248, 0.6) !important;
 	}
-	body:not(.overlay-header) .primary-menu ul {
+	body .primary-menu ul {
 		background-color: #2e2e2e !important;
+		color: #f2f2f2;
 	}
 	html body:not(.overlay-header) .primary-menu > li > ul:after,
 	html .primary-menu ul::after {
@@ -243,8 +258,7 @@ body .logged-in-as a {
 		fill: rgba(248, 248, 248, .4);
 	}
 }
-.archive-subtitle,
-.intro-text {
+.archive-subtitle {
 	text-align: left;
 }
 .post-meta .post-author {
@@ -504,7 +518,10 @@ a.comment-reply-link:hover {
       grid-column: 1;
       -ms-grid-row: 2;
       grid-row: 2;
-    }
+	}
+	.wp-block-media-text .wp-block-media-text__content {
+		padding: 3rem 0rem;
+	}
 }
 
 
@@ -722,7 +739,7 @@ pre.wp-block-code {
 	}
 }
 
-/* Hintergrund für Beitragsbilder */
+/* Hintergrund für Beitragsbilder bei Blogbeiträgen */
 @media (min-width: 1200px) {
 	body:not(.single) #site-content .featured-media img,
 	#site-content .featured-media img {
@@ -786,6 +803,32 @@ ul.social-icons li {
     .home h2:first-of-type {
         font-size: 3.8rem;
     }
+}
+
+/* Profil */
+@media (min-width: 1200px) {
+	.wp-block-media-text.cv .wp-block-media-text__media img{
+		border-radius: .8rem;
+	}
+}
+.wp-block-media-text.cv h3::before {
+	display: inline-table;
+	content: "\02698";
+	color: #666;
+	font-size: 1.2em;
+	padding-right: 1.6rem;
+}
+.wp-block-media-text.cv.bw h3::before {
+	content: "\0269B";
+}
+@media (prefers-color-scheme: dark) {
+	.wp-block-media-text.cv.kxmade .wp-block-media-text__media img,
+	.wp-block-media-text.cv.eriastudio .wp-block-media-text__media img  {
+		background-color: rgba(102, 102, 102, .12);
+	}
+	.wp-block-media-text.cv h3::before {
+		color: #F9D448;
+	}
 }
 
 /* Cookie Info */
