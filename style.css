@@ -4,7 +4,7 @@
 * Author: <a href="https://christopherkurth.com">Christopher Kurth</a>
 * Requires at least: WordPress 5.3
 * Template: twentytwenty
-* Version: 3.1.13
+* Version: 3.1.14
 * License: GNU General Public License v2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -257,6 +257,9 @@ body .logged-in-as a {
 	.post-meta svg * {
 		fill: rgba(248, 248, 248, .4);
 	}
+}
+.comment-meta .avatar {
+	border-radius: .8rem;
 }
 .archive-subtitle {
 	text-align: left;
