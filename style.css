@@ -4,7 +4,7 @@
 * Author: <a href="https://christopherkurth.com">Christopher Kurth</a>
 * Requires at least: WordPress 5.3
 * Template: twentytwenty
-* Version: 3.1.14
+* Version: 3.1.22
 * License: GNU General Public License v2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -117,8 +117,13 @@ body .widget .heading-size-3 {
 /* ********************** Header **********************
 ******************************************** */
 
-#site-header .header-inner {
-	box-shadow: 0 1px 0 rgba(46, 46, 46, .08);
+header.entry-header,
+.blog header#site-header,
+.singular .featured-media::before {
+	box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.blog header.entry-header {
+	box-shadow: none;
 }
 body.template-cover #site-header .header-inner {
 	box-shadow: 0 1px 0 rgba(242, 242, 242, .08);
@@ -485,7 +490,7 @@ a.comment-reply-link:hover {
 	-webkit-transform: translateY(-8px);
 	-ms-transform: translateY(-8px);
 	transform: translateY(-8px);
-	border-top-color: #F9D448;
+	border-top-color: #F1DC71;
 	border-top-width: 6px;
 	padding-top: .8rem;
 	margin-bottom: .8rem;
@@ -711,7 +716,7 @@ html blockquote,
 html .border-color-accent, 
 html .border-color-accent-hover:hover, 
 html .border-color-accent-hover:focus {
-	border-color: #F9D448;
+	border-color: #F1DC71;
 }
 
 html caption, 
@@ -761,9 +766,12 @@ pre.wp-block-code {
 }
 #site-content .featured-media img,
 #site-content .cover-header {
-	background: #e8e8e8;
-	background: repeating-radial-gradient(circle closest-corner at 50% 50%, #f2f2f2 0%, #e6e6e6 100%);
+	background: #becbc9;
+	background: linear-gradient(222deg, #a8bab7 0%, #becbc9 100%);
 	background-blend-mode: color-burn;
+}
+body.singular #site-content .featured-media img{
+	box-shadow: 0 1.5vw 3vw -0.7vw rgba(0,0,0,0.125);
 }
 @media (prefers-color-scheme: dark) { 
 	html #site-content .featured-media img {
@@ -773,6 +781,15 @@ pre.wp-block-code {
 
 /* ********************** Footer **********************
 ******************************************** */
+
+.footer-nav-widgets-wrapper.header-footer-group {
+	box-shadow: 0 8px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer#site-footer p.powered-by-wordpress a,
+footer#site-footer .to-the-top {
+	color: #868686;
+}
 
 /* Social Icons */
 ul.social-icons {
@@ -846,7 +863,7 @@ ul.social-icons li {
 		background-color: rgba(102, 102, 102, .12);
 	}
 	.wp-block-media-text.cv h3::before {
-		color: #F9D448;
+		color: #F1DC71;
 	}
 }
 
@@ -879,7 +896,7 @@ ul.social-icons li {
 
 /* Cookie Info */
 html .seopress-user-consent {
-	background-color: rgba(249, 211, 72, .9);
+	background-color: rgba(241, 220, 113, .9);
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 }
